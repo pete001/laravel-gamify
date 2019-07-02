@@ -34,8 +34,8 @@ abstract class BadgeType
      */
     public function getMeta()
     {
-        return property_exists($this, 'metaBadge')
-            ? $this->metaBadge
+        return property_exists($this, 'meta')
+            ? $this->meta
             : false;
     }
 
