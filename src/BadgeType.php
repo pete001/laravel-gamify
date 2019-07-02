@@ -145,7 +145,7 @@ abstract class BadgeType
                 'level' => $this->getLevel(),
                 'description' => $this->getDescription(),
                 'icon' => $this->getIcon(),
-                'meta' => $this->getMeta(),
+                'is_meta' => $this->getMeta(),
             ]);
 
         $badge->save();
