@@ -28,6 +28,16 @@ abstract class BadgeType
     abstract public function qualifier($user);
 
     /**
+     * Fetch the id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->model->id;
+    }
+
+    /**
      * Whether this badge belongs to a meta achievement
      *
      * @return bool
@@ -36,7 +46,7 @@ abstract class BadgeType
     {
         return property_exists($this, 'parent')
             ? $this->parent
-            : false;
+            : null;
     }
 
     /**
