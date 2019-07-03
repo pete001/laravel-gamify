@@ -38,6 +38,18 @@ abstract class BadgeType
     }
 
     /**
+     * We need to know the points of a badge so we can display it
+     *
+     * @return bool
+     */
+    public function getPoints()
+    {
+        return property_exists($this, 'points')
+            ? $this->points
+            : 0;
+    }
+
+    /**
      * Whether this badge belongs to a meta achievement
      *
      * @return bool
