@@ -28,14 +28,14 @@ abstract class BadgeType
     abstract public function qualifier($user);
 
     /**
-     * A meta badge (achievement)
+     * Whether this badge belongs to a meta achievement
      *
      * @return bool
      */
-    public function getMeta()
+    public function getParent()
     {
-        return property_exists($this, 'meta')
-            ? $this->meta
+        return property_exists($this, 'parent')
+            ? $this->parent
             : false;
     }
 
@@ -145,7 +145,7 @@ abstract class BadgeType
                 'level' => $this->getLevel(),
                 'description' => $this->getDescription(),
                 'icon' => $this->getIcon(),
-                'is_meta' => $this->getMeta(),
+                'parent' => $this->getParent(),
             ]);
 
         $badge->save();
