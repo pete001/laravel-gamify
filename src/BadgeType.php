@@ -168,6 +168,7 @@ abstract class BadgeType
                 'description' => $this->getDescription(),
                 'icon' => $this->getIcon(),
                 'parent' => $this->getParent(),
+                'points' => $this->getPoints(),
             ]);
 
         $badge->save();
